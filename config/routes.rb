@@ -7,4 +7,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  namespace :api do
+    namespace :v1 do
+      get '/search', to: 'discogs#search_album'
+      get '/artists/:artist_id/releases', to: 'discogs#artist_releases'
+      get '/releases/:release_id', to: 'discogs#release'
+      get '/masters/:master_id', to: 'discogs#master'
+    end
+  end
 end

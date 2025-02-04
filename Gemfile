@@ -47,3 +47,9 @@ group :development, :test do
 end
 
 
+source 'https://rubygems.org'
+
+# Add these lines to your existing Gemfile
+gem 'discogs-wrapper'  # For Discogs API integration
+gem 'dotenv-rails'     # For environment variables
+gem 'rack-cors'        # For handling CORS
