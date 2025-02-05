@@ -10,8 +10,8 @@ class DiscogsService
   end
 
   def search(query)
-    Rails.logger.info "#{URI.encode_www_form_component(query)}"
-    make_request("/database/search?q=#{URI.encode_www_form_component(query)}&type=release")
+    Rails.logger.info query.to_h.to_query
+    make_request("/database/search?#{query.to_h.to_query}&type=master")
   end
 
   def get_artist_releases(artist_id)
