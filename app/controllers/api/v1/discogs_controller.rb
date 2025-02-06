@@ -28,7 +28,7 @@ module Api
       private
 
       def search_params
-        params.permit(:q, :type, :artist, :genre, :country, :year, :per_page,:page)
+        params.permit(:q, :type, :artist, :genre, :country, :year, :per_page, :page)
       end
     end
   end

@@ -30,10 +30,10 @@ module DiscogsBackend
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3000', 'https://gorgeous-muffin-c1dca2.netlify.app'
-        resource '*',
+        origins "http://localhost:3000", "https://gorgeous-muffin-c1dca2.netlify.app"
+        resource "*",
                  headers: :any,
-                 methods: [:get, :post, :patch, :put, :delete, :options]
+                 methods: [ :get, :post, :patch, :put, :delete, :options ]
       end
     end
 

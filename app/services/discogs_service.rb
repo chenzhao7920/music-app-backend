@@ -1,11 +1,11 @@
-require 'net/http'
-require 'json'
+require "net/http"
+require "json"
 class DiscogsService
-  BASE_URL = 'https://api.discogs.com'
+  BASE_URL = "https://api.discogs.com"
   def initialize
     @headers = {
-      'Authorization' => "Discogs key=#{ENV['DISCOGS_API_KEY']}, secret=#{ENV['DISCOGS_API_SECRET']}",
-      'Content-Type' => 'application/json'
+      "Authorization" => "Discogs key=#{ENV['DISCOGS_API_KEY']}, secret=#{ENV['DISCOGS_API_SECRET']}",
+      "Content-Type" => "application/json"
     }
   end
 
@@ -37,7 +37,7 @@ class DiscogsService
 
     JSON.parse(response.body)
   rescue JSON::ParserError => e
-    { error: 'Failed to parse response' }
+    { error: "Failed to parse response" }
   rescue StandardError => e
     { error: e.message }
   end
